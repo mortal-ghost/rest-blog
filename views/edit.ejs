@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs') %>
+
+<div class="flex justify-around">
+  <div class="border-black border-2 rounded-lg w-3/4 py-2 m-2">
+    <h2 class="text-4xl mb-10 text-center">Edit <%= foundBlog.title %></h2>
+
+    <form
+      method="post"
+      class="text-center"
+      action="/blogs/<%= foundBlog.id %>?_method=PUT"
+    >
+      <div class="m-2 p-2 text-xl">
+        <label for="title" class="block mb-1">Title</label>
+        <input
+          type="text"
+          name="blog[title]"
+          id="title"
+          value="<%= foundBlog.title %>"
+          class="lg:w-1/2 pl-3 py-[8px] w-3/4 border-2 border-black rounded-lg"
+        />
+      </div>
+      <div class="m-2 p-2 text-xl">
+        <label for="image" class="block mb-1">Image URL</label>
+        <input
+          type="text"
+          name="blog[image]"
+          id="image"
+          value="<%= foundBlog.image %>"
+          class="lg:w-1/2 pl-3 py-[8px] w-3/4 border-2 border-black rounded-lg"
+        />
+      </div>
+      <div class="m-2 p-2 text-xl">
+        <label for="body" class="block mb-1">Body</label>
+        <textarea
+          name="blog[body]"
+          rows="5"
+          id="body"
+          class="lg:w-1/2 pl-3 py-[8px] w-3/4 border-2 border-black rounded-lg"
+        >
+            <%= foundBlog.body %>
+        </textarea>
+      </div>
+      <div class="m-2 p-2 text-xl text-center">
+        <button
+          type="submit"
+          class="bg-blue-500 w-1/5 hover:bg-blue-700 text-xl text-white py-2 px-4 rounded-lg"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>
