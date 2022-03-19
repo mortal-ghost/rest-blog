@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 mongoose.connect(
-  "mongodb+srv://ads_db:byebye21@cluster0.gzgym.mongodb.net/restblog?retryWrites=true&w=majority"
+  ""
 );
 
 const blogSchema = mongoose.Schema({
